@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Sabina 💖</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .slideshow {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      animation: fade 15s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 1; }
+      33% { opacity: 0; }
+      66% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .message {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      font-size: 2em;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 2rem;
+      animation: float 6s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img class="slideshow" id="slide" src="img1.png" />
+
+  <div class="message">
+    Dear Sabina Gurung ❤️<br>Add commentMore actions
+    You should be a prooo playerrrrrrr 🎮✨<br>
+    may tmyle socheko sabae kura tmro sab khusi double am change hos  ...<br>
+    hehe new thing for you ik that ik this is so much smallthing for you but this is from shushant 🥺💘
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.dropbox.com/s/9smc4wn9lmq9e3j/raataan-lambiyan.mp3?raw=1" type="audio/mp3">
+  </audio>
+
+  <script>
+    const images = ["img1.png", "img2.png", "img3.png"];
+    let current = 0;
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      document.getElementById("slide").src = images[current];
+    }, 5000); // change every 5 sec
+
+    // hearts float
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      heart.innerText = "❤️";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
